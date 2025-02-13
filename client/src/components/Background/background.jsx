@@ -10,9 +10,10 @@ import ParagraphSkeleton from "../Common/ParagraphSkeleton";
 
 
 function Background() {
-
+    const Server_URL = import.meta.env.VITE_SERVER_URL;
     const { isLoading, error, data } = useQuery('background', () =>
-        axios.get('http://localhost:5000/api/background')
+        
+        axios.get(`${Server_URL}/api/background`)
             .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
 

@@ -10,9 +10,9 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { FaBars } from "react-icons/fa";
 
 const Portfolio = () => {
-
+    const Server_URL = import.meta.env.VITE_SERVER_URL;
     const { isLoading, error, data } = useQuery('portfolio', () =>
-        axios.get('http://localhost:5000/api/portfolio')
+        axios.get(`${Server_URL}/api/portfolio`)
             .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
     

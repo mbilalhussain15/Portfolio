@@ -1,20 +1,30 @@
-// server/server.js
-
 import express from 'express';
 import cors from 'cors';
 import routes from './routes/routes.js';
+import dotenv from 'dotenv';
+import path from "path";
+
+dotenv.config();
 
 const app = express();
-const port = 5000;
+const port = process.env.Server_Port || 5000;
 
-// Middleware
-app.use(cors());
+// CORS setup
+const corsOptions = {
+  origin: process.env.Client_APP_URL || 'http://localhost:5173', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  
+  credentials: true, 
+};
+
+app.use(cors(corsOptions));
+
+
 app.use(express.json());
 
-// Use the routes
+
 app.use('/api', routes);
 
-// Start server
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

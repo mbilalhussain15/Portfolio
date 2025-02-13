@@ -5,6 +5,8 @@ import Recommendations from '../components/HomeComponents/Recommendations/Recomm
 import ClientReviews from '../components/HomeComponents/ClientReviews/ClientReviews';
 import MySkills from '../components/HomeComponents/Skills/MySkills';
 const Home = () => {
+    const Server_URL = import.meta.env.VITE_SERVER_URL;
+    console.log(Server_URL);
     return (
         <div className="Home-Page -z-10">
             <Banner />

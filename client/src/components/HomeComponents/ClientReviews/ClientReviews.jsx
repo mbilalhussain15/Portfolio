@@ -6,9 +6,9 @@ import ParagraphSkeleton from "../../Common/ParagraphSkeleton";
 
 
 const ClientReviews = () => {
-
+    const Server_URL = import.meta.env.VITE_SERVER_URL;
     const { isLoading, error, data } = useQuery('review', () =>
-        axios.get('http://localhost:5000/api/review')
+        axios.get(`${Server_URL}/api/review`)
             .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
 

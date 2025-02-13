@@ -4,9 +4,9 @@ import axios from "axios";
 import ParagraphSkeleton from "../../Common/ParagraphSkeleton";
 
 const MyExpertise = () => {
-
+    const Server_URL = import.meta.env.VITE_SERVER_URL;
     const { isLoading, error, data } = useQuery('expertise', () =>
-        axios.get('http://localhost:5000/api/expertise')
+        axios.get(`${Server_URL}/api/expertise`)
                 .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
 

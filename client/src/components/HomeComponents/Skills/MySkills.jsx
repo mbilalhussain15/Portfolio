@@ -4,9 +4,9 @@ import ParagraphSkeleton from "../../Common/ParagraphSkeleton";
 import SkillCard from "./SkillCard";
 
 const MySkills = () => {
-
+    const Server_URL = import.meta.env.VITE_SERVER_URL;
     const { isLoading, error, data } = useQuery('skills', () =>
-        axios.get('http://localhost:5000/api/skills')
+        axios.get(`${Server_URL}/api/skills`)
             .then(({ data }) => {
                 console.log('Fetched Data:', data); // Log the response
                 return data;

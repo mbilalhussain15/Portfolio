@@ -17,7 +17,7 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
-
+    const Server_URL = import.meta.env.VITE_SERVER_URL;
     // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -45,7 +45,7 @@ const Contact = () => {
         setMessageStatus(''); // Clear previous message status
 
         try {
-            const response = await axios.post('http://localhost:5000/api/sendEmail', {
+            const response = await axios.post(`${Server_URL}/api/sendEmail`, {
                 email,
                 subject,
                 message,
