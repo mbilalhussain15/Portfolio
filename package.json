@@ -7,7 +7,7 @@
     },
   
     "scripts": {
-        "install": "npm install --prefix client && npm install --prefix server",
+        "install": "npm install --legacy-peer-deps --prefix client && npm install --legacy-peer-deps --prefix server",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "server": "npm run start --prefix server",
         "client": "npm run dev --prefix client"
