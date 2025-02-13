@@ -8,11 +8,12 @@ import { Modal, Skeleton } from "antd";
 import ImageAndParagraphSkeleton from "../Common/ImageAndParagraphSkeleton";
 import { AiOutlineClose } from 'react-icons/ai';
 import { FaBars } from "react-icons/fa";
+import api from "../../utils/api";
 
 const Portfolio = () => {
-    const Server_URL = import.meta.env.VITE_SERVER_URL;
+  
     const { isLoading, error, data } = useQuery('portfolio', () =>
-        axios.get(`${Server_URL}/api/portfolio`)
+        api.get('/portfolio')
             .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
     

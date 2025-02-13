@@ -2,13 +2,14 @@ import ReviewCard from "./ReviewCard"
 import axios from "axios";
 import { useQuery } from "react-query";
 import ParagraphSkeleton from "../../Common/ParagraphSkeleton";
+import api from "../../../utils/api";
 
 
 
 const ClientReviews = () => {
-    const Server_URL = import.meta.env.VITE_SERVER_URL;
+    
     const { isLoading, error, data } = useQuery('review', () =>
-        axios.get(`${Server_URL}/api/review`)
+        api.get('/review')
             .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
 

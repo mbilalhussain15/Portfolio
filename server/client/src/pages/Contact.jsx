@@ -9,6 +9,7 @@ import axios from 'axios';
 import QuillEditor from '../components/QuillEditor/QuillEditor.jsx';
 import { AiOutlineClose } from 'react-icons/ai';
 import { SOCIAL_LINKS } from '../constants/constants.jsx';
+import api from '../utils/api.js';
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
-    const Server_URL = import.meta.env.VITE_SERVER_URL;
+   
     // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -45,7 +46,7 @@ const Contact = () => {
         setMessageStatus(''); // Clear previous message status
 
         try {
-            const response = await axios.post(`${Server_URL}/api/sendEmail`, {
+            const response = await api.post('/sendEmail', {
                 email,
                 subject,
                 message,

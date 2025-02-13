@@ -2,13 +2,14 @@ import RecommendationCard from "./RecommendationCard"
 import axios from "axios";
 import { useQuery } from "react-query";
 import ParagraphSkeleton from "../../Common/ParagraphSkeleton";
+import api from "../../../utils/api";
 
 
 const Recommendations = () => {
-    const Server_URL = import.meta.env.VITE_SERVER_URL;
+   
 
     const { isLoading, error, data } = useQuery('recommendations', () =>
-        axios.get(`${Server_URL}/api/recommendations`)
+        api.get('/recommendations')
             .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
 

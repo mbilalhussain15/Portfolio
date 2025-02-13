@@ -7,13 +7,13 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { Skeleton } from "antd";
 import ParagraphSkeleton from "../Common/ParagraphSkeleton";
+import api from "../../utils/api";
 
 
 function Background() {
-    const Server_URL = import.meta.env.VITE_SERVER_URL;
     const { isLoading, error, data } = useQuery('background', () =>
         
-        axios.get(`${Server_URL}/api/background`)
+        api.get('/background')
             .then(({ data }) => data)
             .catch(error => console.error('Error fetching testimonials:', error)))
 
