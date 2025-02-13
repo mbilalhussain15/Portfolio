@@ -1,0 +1,65 @@
+
+:root {
+    --toolbar-bg: #1a1a1a;
+    --toolbar-text: #e2e8f0;
+    --text-color: #e2e8f0;
+  }
+  
+  .dark {
+    --toolbar-bg: #18181b;
+    --toolbar-text: #e2e8f0;
+    --text-color: #e2e8f0;
+  }
+  
+  .ql-toolbar {
+    background-color: var(--toolbar-bg);
+    color: var(--toolbar-text);
+    border: none !important; 
+    border-radius: 0.5rem; 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .ql-toolbar .ql-picker, 
+  .ql-toolbar button {
+    color: var(--toolbar-text);
+  }
+  
+  .ql-toolbar .ql-picker-options {
+    background-color: var(--toolbar-bg);
+  }
+  
+  .ql-editor {
+    color: var(--text-color);
+    padding: 1rem; 
+    min-height: 200px; 
+    border: none; 
+    border-radius: 0.5rem; 
+    max-height: 400px; /* Set your desired max height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    
+  }
+  
+  .ql-container.ql-snow {
+    border: none !important; 
+
+  }
+
+/* Custom styles for Quill editor */
+.ql-container {
+  /* Applying Tailwind CSS classes */
+  @apply bg-DeepNightBlack text-SilverGray rounded-md border border-DeepNightBlack outline-none focus:ring-1 focus:ring-Green border-solid;
+}
+/* focus:ring-Green border-[#6366f1] */
+.ql-container:focus-within {
+  @apply border-[#1fdf64] outline-none focus:ring-1 focus:ring-Green;
+}
+
+
+/* Styling images within the editor */
+.ql-editor img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Optional: maintains aspect ratio */
+}
