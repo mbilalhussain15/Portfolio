@@ -33,27 +33,27 @@ body {
     /* Corrected font-face paths */
     @font-face {
       font-family: 'cascadia-normal';
-      src: url('/client/public/fonts/Cascadia.ttf') format('opentype');
+      src: url('/server/client/public//fonts//Cascadia.ttf') format('opentype');
       font-display: swap;
     }
     @font-face {
       font-family: 'circular-light';
-      src: url('/client/public/fonts/Circular-Light.otf') format('opentype');
+      src: url('/server/client/public/fonts/Circular-Light.otf') format('opentype');
       font-display: swap;
     }
     @font-face {
       font-family: 'circular-normal';
-      src: url('/client/public/fonts/Circular-Book.otf') format('opentype');
+      src: url('/server/client/public/fonts/Circular-Book.otf') format('opentype');
       font-display: swap;
     }
     @font-face {
       font-family: 'circular-medium';
-      src: url('/client/public/fonts/Circular-Medium.otf') format('opentype');;
+      src: url('/server/client/public/fonts/Circular-Medium.otf') format('opentype');;
       font-display: swap;
     }
     @font-face {
       font-family: 'circular-bold';
-      src: url('/client/public/fonts/Circular-Bold.otf') format('opentype');;
+      src: url('/server/client/public/fonts/Circular-Bold.otf') format('opentype');;
       font-display: swap;
     }
     
