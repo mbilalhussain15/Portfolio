@@ -6,8 +6,9 @@
     "npm": "10.x"
   },
  "scripts": {
-    "start": "node index.js"
-  },
+  "start": "node server/index.js"
+},
+
   "dependencies": {
     "concurrently": "^9.1.2",
     "cors": "^2.8.5",
