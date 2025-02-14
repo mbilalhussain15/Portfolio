@@ -14,7 +14,10 @@ const Portfolio = () => {
   
     const { isLoading, error, data } = useQuery('portfolio', () =>
         api.get('/portfolio')
-            .then(({ data }) => data)
+            .then(({ data }) => {
+                console.log('Fetched Data:', data); // Log the response
+                return data
+            })
             .catch(error => console.error('Error fetching testimonials:', error)))
     
     const [isMoreModalOpen, setIsMoreModalOpen] = useState(false);
