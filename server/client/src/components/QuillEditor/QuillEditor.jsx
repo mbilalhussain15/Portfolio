@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
-// import 'react-quill/dist/quill.snow.css';
-import 'react-quill/dist/quill.snow.css?inline';
+import 'react-quill/dist/quill.snow.css';
 
 import './QuillEditor.css'; // Ensure this imports Tailwind CSS and custom styles
 
