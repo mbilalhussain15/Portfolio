@@ -10,13 +10,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Convert __dirname to ES module format
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-console.log(__dirname);
 // CORS setup
 const corsOptions = {
-  origin: process.env.CLIENT_APP_URL || 'http://localhost:5173', 
+  origin: process.env.Client_APP_URL || 'https://mbilalhussain15.github.io/Portfolio', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],  
   credentials: true, 
 };
@@ -27,11 +23,6 @@ app.use(express.json());
 // API Routes
 app.use('/api', routes);
 
-app.use(express.static(path.join(__dirname, "/client/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-});
 
 // Start Server
 app.listen(port, () => {
