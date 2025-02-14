@@ -23,6 +23,7 @@ const App = () => {
             {/* Add other routes here as needed */}
           </Routes>
         </Layout>
+      
       </Router>
     </QueryClientProvider>
   );

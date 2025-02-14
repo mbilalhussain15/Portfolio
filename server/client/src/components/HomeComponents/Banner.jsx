@@ -11,10 +11,10 @@ const Banner = () => {
                     <div className="flex items-center md:items-center md:justify-around">
                         <div className="">
                             <div className="">
-                                <h1 className="text-3xl sm:text-4xl xl:text-5xl text-Snow font-bold">Hello, Check This Out!</h1>
+                                <h1 className="text-3xl sm:text-4xl xl:text-5xl text-Snow font-bold ">Hello, Check This Out!</h1>
                             </div>
                             <div className="">
-                                <div className=" py-4 font-cascadia-normal text-Snow pb-4 text-xs h-20 lg:h-auto">
+                                <div className=" py-4 font-cascadia-normal text-Snow pb-4 text-sm h-20 lg:h-auto">
                                     <span>{"<"}<span className="text-Green sm:text-base xl:text-lg font-bold">div</span>
                                         {">"} <span className="text-Snow sm:text-xl xl:text-2xl font-bold"> I am a  <span className="inline-block">
                                             <Typewriter
@@ -31,7 +31,7 @@ const Banner = () => {
                             </div>
                             <Link to='intro' spy={true} smooth={true} duration={500} offset={-50} className="button">Explore</Link>
                         </div>
-                        <div className="w-48 h-52 relative hidden md:block">
+                        <div className="w-24 h-20 relative bottom-[-5vh] md:bottom-0  md:block md:w-48 md:h-52">
                             <img className='absolute top-8 w-full h-full' src={emojiImg} alt="emoji" />
                         </div>
                     </div>
