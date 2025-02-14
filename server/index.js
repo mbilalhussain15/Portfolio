@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes/routes.js';
 import dotenv from 'dotenv';
-import path from 'path';
+import path from "path";
 import { fileURLToPath } from 'url';
 
 dotenv.config();
@@ -14,7 +14,6 @@ const port = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log(__dirname);
-
 // CORS setup
 const corsOptions = {
   origin: process.env.CLIENT_APP_URL || 'http://localhost:5173', 
@@ -28,12 +27,10 @@ app.use(express.json());
 // API Routes
 app.use('/api', routes);
 
-// Serve static files from React build
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
-// Catch all other requests and serve the index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
 });
 
 // Start Server
