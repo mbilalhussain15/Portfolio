@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter  as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter  as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Layout from './pages/layout.jsx';
 import Home from './pages/Home.jsx'; // Your Home component path
