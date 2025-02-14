@@ -7,7 +7,7 @@ import api from "../../../utils/api";
 const MySkills = () => {
   
     const { isLoading, error, data } = useQuery('skills', () =>
-        axios.get('https://mbilalhussain-folio-53af3d2e7767.herokuapp.com/api/skills')
+        api.get('/skills')
             .then(({ data }) => {
                 console.log('Fetched Data:', data); // Log the response
                 return data;
