@@ -51,9 +51,9 @@ export default function Layout({ children }) {
               <FaBars />
             </span>
           </div>
-          <span className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 flex items-center justify-center text-center text-xl text-gray-600 font-extrabold tracking-widest'>
+          {/* <span className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 flex items-center justify-center text-center text-xl text-gray-600 font-extrabold tracking-widest'>
             NavBar
-          </span>
+          </span> */}
         </div>
         {<Nav isOpen={isOpen} setIsOpen={setIsOpen} />}
       </div>
