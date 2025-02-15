@@ -10,6 +10,8 @@ import QuillEditor from '../components/QuillEditor/QuillEditor.jsx';
 import { AiOutlineClose } from 'react-icons/ai';
 import { SOCIAL_LINKS } from '../constants/constants.jsx';
 import api from '../utils/api.js';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +25,13 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const email = e.target.email?.value;
+        const email = e.target.fromEmail?.value;
         const subject = e.target.subject?.value; 
-        const message = e.target.message?.value;
+        // const message = e.target.message?.value;
     
         console.log(email);
         console.log(subject, message);
-        // Check if any field is empty
+       
         if (!email) {
             alert("Email is required!");
             return;
@@ -43,7 +45,7 @@ const Contact = () => {
             return;
         }
         setIsLoading(true);
-        setMessageStatus(''); // Clear previous message status
+        setMessageStatus(''); 
 
         try {
             const response = await api.post('/sendEmail', {
@@ -65,8 +67,8 @@ const Contact = () => {
             setMessageStatus('failed');
         }
 
-        setIsOpen(true); // Open modal
-        setIsLoading(false); // Hide loader after response
+        setIsOpen(true); 
+        setIsLoading(false); 
     };
 
     return (
@@ -128,7 +130,7 @@ const Contact = () => {
                                         name="fromEmail"
                                         type="email"
                                         autoComplete="new-password"
-                                        className="input_stylings "
+                                        className="input_stylings"
                                         placeholder="Your Email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
@@ -185,8 +187,9 @@ const Contact = () => {
                                     </div>
                                     
                                     <QuillEditor
+                                     name="message"
                                      value={message}
-                                     onChange={setMessage}
+                                     onChange={(content) => setMessage(content)} 
                                      theme="snow"
                                      placeholder="Type your message here..."
                                     />
@@ -194,9 +197,14 @@ const Contact = () => {
                             </div>
 
                             <div className="my-4">
-                                <button type="submit" className="button">
-                                    SEND MESSAGE
-                                </button>
+                            <button 
+                                type="submit" 
+                                className="button flex items-center gap-2 justify-center" 
+                                disabled={isLoading}
+                            >
+                                {isLoading && <AiOutlineLoading3Quarters className="animate-spin text-lg" />}
+                                {isLoading ? "Sending..." : "SEND MESSAGE"}
+                            </button>
                             </div>
                         </div>
                     </form>

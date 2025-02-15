@@ -6,7 +6,7 @@ const ProgrammingLanguages = [
     { id: 3, title: 'Kotlin', desc: 'Kotlin is my go-to language for Android development, providing modern, safe, and concise code for building high-quality mobile apps.' },
     { id: 4, title: 'JavaScript', desc: 'JavaScript is essential for front-end development, and I use it to create dynamic and interactive user interfaces with frameworks like ReactJS.' },
     { id: 5, title: 'Swift', desc: 'JavaScript is essential for front-end development, and I use it to create dynamic and interactive user interfaces with frameworks like ReactJS.' },
-    { id: 5, title: 'Swift', desc: 'Swift is the language I use for building iOS applications. I leverage its powerful features for creating high-performance, safe, and elegant mobile apps.' },
+    
 ];
 
 const FrameworksAndLibraries = [

@@ -14,7 +14,7 @@ const port = process.env.PORT || 5000;
 const corsOptions = {
   origin: [
     process.env.Client_APP_URL || 'https://mbilalhussain15.github.io', 
-    'https://mbilalhussain15.github.io/Portfolio'
+    'https://mbilalhussain15.github.io/Portfolio', 'http://localhost:5173'
   ],  
   methods: ['GET', 'POST', 'PUT', 'DELETE'],  
   credentials: true, 
