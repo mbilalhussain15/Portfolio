@@ -45,7 +45,5 @@ You can view the live demo of the portfolio website here:
    ```
 
 This will launch the app, and you can view it in your browser at http://localhost:5317.
-![Capture1](https://github.com/user-attachments/assets/b084ce05-af05-435d-8779-b5172b1d4531)
-
 
 
