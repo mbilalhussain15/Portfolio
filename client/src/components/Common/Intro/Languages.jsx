@@ -24,7 +24,7 @@ const Languages = () => {
                 <div className="flex flex-row items-center justify-center space-x-6">
                     <div className="flex flex-col items-center justify-center gap-y-2">
                         <Progress strokeColor="#1fdf64" type="circle" percent={german} size={75} />
-                        <span className='text-xs font-bold text-Snow'>German: B1 (Learning)</span>
+                        <span className='text-xs font-bold text-Snow'>German: A2 (Learning)</span>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-y-2">
                         <Progress strokeColor="#1fdf64" type="circle" percent={english} size={75} />

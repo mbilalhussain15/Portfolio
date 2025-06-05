@@ -6,7 +6,8 @@
     "npm": "10.x"
   },
  "scripts": {
-  "start": "node server/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
 },
 
   "dependencies": {

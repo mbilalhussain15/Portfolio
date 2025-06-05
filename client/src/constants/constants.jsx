@@ -18,7 +18,7 @@ export const DETAILS = {
     </span>
   ),
   City: 'Heidelberg',
-  Age: '28',
+  Age: '29',
 };
 
 export const SKILLS = [

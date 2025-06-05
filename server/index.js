@@ -10,6 +10,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 // CORS setup
 const corsOptions = {
   origin: [
@@ -27,7 +31,35 @@ app.use(express.json());
 app.use('/api', routes);
 
 
+
+
+// // Serve static assets with proper MIME types
+// app.use('/Portfolio/assets', express.static(
+//   path.join(__dirname, '../client/build/assets'),
+//   {
+//     setHeaders: (res, path) => {
+//       if (path.endsWith('.js')) {
+//         res.set('Content-Type', 'application/javascript')
+//       }
+//     }
+//   }
+// ))
+
+// Serve other static files
+app.use('/Portfolio', express.static(path.join(__dirname, '../client/build')))
+
+// Handle client-side routing
+app.get('/Portfolio/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
+})
+
+
+
+
+
+
+
 // Start Server
 app.listen(port, () => {
-  console.log(`✅ Server running at http://localhost:${port}`);
+  console.log(`✅ Server running at http://localhost:${port}/Portfolio`);
 });
