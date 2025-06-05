@@ -10,8 +10,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 
 // CORS setup
@@ -45,13 +45,13 @@ app.use('/api', routes);
 //   }
 // ))
 
-// Serve other static files
-app.use('/Portfolio', express.static(path.join(__dirname, '../client/build')))
+// // Serve other static files
+// app.use('/Portfolio', express.static(path.join(__dirname, '../client/build')))
 
-// Handle client-side routing
-app.get('/Portfolio/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
-})
+// // Handle client-side routing
+// app.get('/Portfolio/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
+// })
 
 
 
