@@ -31,6 +31,11 @@ app.use(express.json());
 app.use('/api', routes);
 
 
+app.get('/Portfolio/health', (req, res) => {
+  res.send('API is running...');
+}
+);
+
 
 
 // // Serve static assets with proper MIME types
